@@ -8,8 +8,14 @@ import routes from './routes';
 
 const app = express();
 
+//this is for logging purposes
+const accessLogStream = fs.createWriteStream(
+  path.join(__dirname, '../access.log'),
+  { flags: 'a' }
+);
+
 app.use(helmet());
-app.use(morgan('combined'));
+app.use(morgan('combined', { stream: accessLogStream }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

@@ -4,12 +4,14 @@ const userController = require('../controllers/user.controller');
 const router = Router();
 
 // Routes are placed here
-router.get('/:id', userController.getUser)
+router.get('/get-users', userController.getUsers)
 
-router.post('/create', userController.createUser)
+router.get('/get-user/:id', userController.getUser)
 
-router.post('/update/:id', userController.updateUser)
+router.post('/create-user', userController.createUser)
 
-router.post('/delete', userController.deleteUser)
+router.patch('/update-user/:id', userController.updateUser)
+
+router.delete('/delete-user', userController.deleteUser)
 
 export default router;

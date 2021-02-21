@@ -6,7 +6,8 @@
   "author": "Adedotun Alausa",
   "license": "MIT",
   "scripts": {
-    "dev": "env NODE_ENV=development nodemon src/index.js"
+    "dev": "env NODE_ENV=development nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
